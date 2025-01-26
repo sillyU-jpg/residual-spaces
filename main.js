@@ -1,6 +1,10 @@
 import * as THREE from 'three';
 import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import WebGL from 'three/addons/capabilities/WebGL.js';
+import { Raycaster } from 'three';
+
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
@@ -9,10 +13,15 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
+
+window.addEventListener('resize', () => {
+    renderer.setSize(window.clientWidth, container.clientHeight);
+  });
 const geometry = new THREE.BoxGeometry( 1, 1, 1 );
 const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
 const ambientlight = new THREE.AmbientLight(0xffffff)
 const pointLight = new THREE.PointLight( 0xffffff, 15 );
+
 
 
 const loader = new OBJLoader();
@@ -23,11 +32,13 @@ scene.add( cube );
 scene.add(ambientlight)
 scene.add( pointLight );
 
+const controls = new OrbitControls( camera, renderer.domElement);
+controls.enableDamping = true;
+controls.enableZoom = true;
 
-  
 let loadedObject; // Declare the variable in the outer scope
 
-loader.load(
+loadedObject = loader.load(
   'title.obj', // Path to the OBJ file
   (object) => {
     // This function is called when the OBJ file is loaded
@@ -47,9 +58,10 @@ loader.load(
 
 camera.position.z = 8;
 function animate() {
+ 
     cube.rotation.x += 0.01
     cube.rotation.y += 0.01
-    window.resizeTo(window.innerHeight, window.innerWidth)
+    
 	renderer.render( scene, camera );
 }
 

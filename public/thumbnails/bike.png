@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script type="module" src="/@vite/client"></script>
+
+		<meta charset="utf-8">
+        <link rel="stylesheet" href="/style.css">
+        <script type="module" src="/main.js"></script> 
+		<title>NikolaiKing.com </title>
+		<style>
+
+      @import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap');
+			body { margin: 0; }
+		</style>
+	</head>
+
+<header id="top">
+    <section class="section section-one">
+      <div class ="container"> 
+  <h1 id="title"> </h1>
+  <p> Welcome to my portfolio and CV website, here youll find all of my projects, <br>
+   past work, and get a chance to learn more about me. </p>
+  </div>
+  </section>
+  </header>
+    
+  <section class="section nav-section"> 
+    <div class="container">
+    <nav>
+
+    <h3 class="header"> <a href=""> About Me </a> <a href=""> Projects and past work </a>  <a href="#" class="header"> My CV </a> <a href="#" class="header"> Image Diary </a></h3>
+    </nav>
+   </div> 
+   </section>
+   
+	<body>
+        <main> 
+            <section class="section-about"> 
+          
+              <h2 class= "section-title"> About Me </h2>
+     
+              <h3> ABOUT ME SECTION IDK WHAT TO WRITE </h3>
+              <h2 class="section-title"> Skills </h2>
+              <ul>
+                <li> HTML </li>
+                <li> CSS </li>
+                <li> Javascript </li>
+                <li> Three.js </li>
+              </ul>               
+            </section>
+          
+            
+          <section class="section-projects"> 
+            <h1 class= "section-title"> Projects and Past Work </h1>
+            <div class="threeborder">
+        <div id='container'> </div>
+           </div>
+
+        <div id="3dthumbnails"> </div>
+        
+
+            <h3> PROJECTS SECTION IDK WHAT TO WRITE yet </h3>
+              <div> </div>
+
+
+
+            <section class="section-CV">
+              <h1> My CV </h1>
+              
+            </section>
+
+          </main>
+          
+
+
+	
+	</body>
+</html>
